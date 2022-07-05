@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+        file-server:
+                container_name: 'file-server'
+                build: .
+                ports:
+                        - "8095:8095"
+                volumes:
+                        - ./static:/internal-static
+                restart: unless-stopped
